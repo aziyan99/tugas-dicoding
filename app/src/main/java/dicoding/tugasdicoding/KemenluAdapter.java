@@ -44,6 +44,23 @@ public class KemenluAdapter extends RecyclerView.Adapter<KemenluAdapter.MyViewHo
                 .into(holder.bendera);
         holder.tvNamaNegara.setText(result.get(position).getNamaNegara());
         holder.tvAmbassador.setText(result.get(position).getAmbassador());
+        holder.itemView.setOnClickListener(v -> {
+            //Toast.makeText(v.getContext(), result.get(position).getAmbassador(), Toast.LENGTH_SHORT).show();
+            Intent detailKemenlu = new Intent(v.getContext(), DetailKemenluActivity.class);
+            Bundle bundle = new Bundle();
+
+            bundle.putString("NAMA_NEGARA", result.get(position).getNamaNegara());
+            bundle.putString("URL_BENDERA", result.get(position).getBendera());
+            bundle.putString("AMBASSADOR", result.get(position).getAmbassador());
+            bundle.putString("ALAMAT", result.get(position).getAlamat());
+            bundle.putString("NO_TELP", result.get(position).getNoTelp());
+            bundle.putString("FAX", result.get(position).getFax());
+            bundle.putString("EMAIL", result.get(position).getEmail());
+            bundle.putString("WEB", result.get(position).getWebsite());
+
+            detailKemenlu.putExtras(bundle);
+            v.getContext().startActivity(detailKemenlu);
+        });
     }
 
     @Override
@@ -51,7 +68,7 @@ public class KemenluAdapter extends RecyclerView.Adapter<KemenluAdapter.MyViewHo
         return result.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView tvAmbassador, tvNamaNegara;
         ImageView bendera;
         public MyViewHolder(@NonNull View itemView) {

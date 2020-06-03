@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">TugasDicoding</string>
+
+    <string name="app_name">Kedutaan Indonesia</string>
+    <string name="string_profile">Profile</string>
+    <string name="name">Raja Azian</string>
+    <string name="email">rajaazian08@gmail.com</string>
+    <string name="github">GITHUB</string>
+    <string name="info">INFO</string>
+    <string name="ambassador">Ambassador</string>
+    <string name="alamat">Alamat</string>
+    <string name="no_telp">No Telpon</string>
+    <string name="fax">Fax</string>
+    <string name="email_kemenlu">Email</string>
+    <string name="website">Website</string>
+
 </resources>
